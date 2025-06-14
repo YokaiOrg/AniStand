@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoJo's AniStand - Регистрация</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-main: #f59e0b;
+            --color-accent: #d97706;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Roboto:wght@400;700&display=swap');
+        
+        .auth-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://wallpapercave.com/wp/wp5483697.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .auth-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .stand-shadow {
+            box-shadow: 0 0 30px rgba(234, 179, 8, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans min-h-screen flex items-center justify-center auth-bg">
+    <div class="container mx-auto px-4 py-12">
+        <div class="max-w-md mx-auto auth-card rounded-2xl overflow-hidden stand-shadow">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-yellow-800 to-yellow-600 p-6 text-center">
+                <div class="flex justify-center mb-4">
+                    <img src="https://i.imgur.com/SY0pCjR.png" alt="Logo" class="h-16 rounded-full border-4 border-white/50">
+                </div>
+                <h1 class="text-3xl font-bold font-['Playfair_Display'] italic">Регистрация</h1>
+                <p class="text-yellow-100 mt-2">Присоединяйся к нашему STANDу!</p>
+            </div>
+            
+            <!-- Form -->
+            <div class="p-6">
+                <form id="register-form">
+                    <div class="space-y-4">
+                        <div>
+                            <label for="username" class="block text-sm font-medium mb-1">Имя пользователя</label>
+                            <div class="relative">
+                                <input type="text" id="username" name="username" required 
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                                    placeholder="JoJo_User">
+                                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                    <i class="fas fa-user text-gray-500"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                            <div class="relative">
+                                <input type="email" id="email" name="email" required 
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                                    placeholder="jojo@example.com">
+                                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                    <i class="fas fa-envelope text-gray-500"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="password" class="block text-sm font-medium mb-1">Пароль</label>
+                            <div class="relative">
+                                <input type="password" id="password" name="password" required 
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                                    placeholder="••••••••">
+                                <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+                                    <i class="fas fa-eye-slash text-gray-500 cursor-pointer toggle-password"></i>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-1">Минимум 8 символов</p>
+                        </div>
+                        
+                        <div>
+                            <label for="confirm-password" class="block text-sm font-medium mb-1">Подтвердите пароль</label>
+                            <div class="relative">
+                                <input type="password" id="confirm-password" name="confirm-password" required 
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                                    placeholder="••••••••">
+                                <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+                                    <i class="fas fa-eye-slash text-gray-500 cursor-pointer toggle-password"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input type="checkbox" id="terms" name="terms" required 
+                                class="w-4 h-4 text-yellow-600 bg-gray-800 border-gray-700 rounded focus:ring-yellow-500">
+                            <label for="terms" class="ml-2 text-sm text-gray-300">
+                                Я согласен с <a href="#" class="text-yellow-500 hover:underline">условиями использования</a>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="w-full mt-6 bg-gradient-to-r from-yellow-600 to-yellow-800 hover:from-yellow-500 hover:to-yellow-700 px-6 py-3 rounded-lg font-bold transition-all flex items-center justify-center border-2 border-white/20 shadow-lg hover:shadow-yellow-500/50">
+                        <i class="fas fa-user-plus mr-2"></i> Зарегистрироваться
+                    </button>
+                </form>
+                
+                <div class="flex items-center my-6">
+                    <div class="flex-1 border-t border-gray-700"></div>
+                    <span class="px-3 text-gray-400 text-sm">ИЛИ</span>
+                    <div class="flex-1 border-t border-gray-700"></div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <button class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-md font-medium flex items-center justify-center">
+                        <i class="fab fa-google mr-2 text-red-500"></i> Google
+                    </button>
+                    <button class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-md font-medium flex items-center justify-center">
+                        <i class="fab fa-vk mr-2 text-blue-500"></i> VK
+                    </button>
+                </div>
+                
+                <p class="text-center mt-6 text-gray-400">
+                    Уже есть аккаунт? <a href="login.html" class="text-yellow-500 hover:underline">Войти</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Toggle password visibility
+            const togglePasswordButtons = document.querySelectorAll('.toggle-password');
+            togglePasswordButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const input = e.target.closest('.relative').querySelector('input');
+                    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                    input.setAttribute('type', type);
+                    e.target.classList.toggle('fa-eye-slash');
+                    e.target.classList.toggle('fa-eye');
+                });
+            });
+            
+            // Form validation
+            const form = document.getElementById('register-form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirm-password').value;
+                
+                if (password !== confirmPassword) {
+                    alert('Пароли не совпадают!');
+                    return;
+                }
+                
+                if (password.length < 8) {
+                    alert('Пароль должен содержать минимум 8 символов!');
+                    return;
+                }
+                
+                // Here you would typically send the data to your server
+                alert('Регистрация успешна! Добро пожаловать в наш STAND!');
+                window.location.href = 'profile.html';
+            });
+        });
+    </script>
+</body>
+</html>
